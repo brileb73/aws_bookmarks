@@ -1,0 +1,67 @@
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+#awsc-switch-role-support {
+    top: 38px;
+    display: block;
+    color: #444;
+    font-size: 13px;
+    line-height: 15px;
+    font-family: Helvetica Neue, Roboto, Arial, Droid Sans, sans-serif;
+    white-space: nowrap;
+    width: auto !important;
+    padding: 25px;
+}
+
+#awsc-switch-role-support ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#awsc-recent-roles-label {
+    color: #999;
+    padding-top: 30px;
+    margin: 10px 40px;
+}
+
+li {
+    line-height: 15px;
+    list-style-type: none;
+    display: list-item;
+    overflow: auto;
+    margin: 15px 0;
+    text-align: -webkit-match-parent;
+}
+
+.awsc-role-color {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    border: solid 1px transparent;
+    margin: 0;
+    line-height: normal;
+}
+
+.awsc-role-submit {
+    padding: 0 0 0 .5em;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    color: #444;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    line-height: normal;
+    vertical-align: top;
+    height: 17px;
+    display: inline-block;
+}
