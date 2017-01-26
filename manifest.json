@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "AWS Role Chooser",
+  "description": "Make your own AWS role history (and have > 5 switch roles)",
+  "version": "0.0",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options/options.html",
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://console.aws.amazon.com/"
+  ]
+}
