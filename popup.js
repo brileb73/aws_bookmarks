@@ -3,6 +3,9 @@
  * Date: 25 Jan, 2017
  */
 
+/*
+ * Modified from github.com/ericcitaire/aws-switch-role-bookmark-generator
+ */
 var exit_role = function() {
   if (window.AWSC == undefined || window.AWSC.Auth == undefined) {
     alert('Please go to the AWS Console to use this bookmark.');
@@ -30,6 +33,9 @@ var exit_role = function() {
   f.submit();
 };
 
+/*
+ * From github.com/ericcitaire/aws-switch-role-bookmark-generator
+ */
 var bookmarklet = function(roleName, account, displayName, color) {
   if (window.AWSC == undefined || window.AWSC.Auth == undefined) {
     alert('Please go to the AWS Console to use this bookmark.');
@@ -113,17 +119,30 @@ function addExit() {
 }
 
 $(document).ready(function() {
-  // Roles are stored as [] of {} under the key "roles" in order to use
-  // JSON.stringify and JSON.parse
-  var accounts_array = JSON.parse(localStorage.accounts_array || "{}");
-  if (accounts_array.roles) {
-    addExit();
-    listRoles(accounts_array.roles);
-    $("a").each(function() {
-      this.addEventListener('click', openLink);
-    });
-  } else {
-    // TODO: Add <tr> to inform user of no roles
-    console.log("No roles available");
-  }
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    if (tabs[0].url.includes("console.aws.amazon.com")) {
+      // Roles are stored as [] of {} under the key "roles" in order to use
+      // JSON.stringify and JSON.parse
+      var accounts_array = JSON.parse(localStorage.accounts_array || "{}");
+      if (accounts_array.roles) {
+        addExit();
+        listRoles(accounts_array.roles);
+        $("a").each(function() {
+          this.addEventListener('click', openLink);
+        });
+      } else {
+        // TODO: Add <tr> to inform user of no roles
+        console.log("No roles available");
+      }
+    } else {
+      $('#awsc-username-menu-recent-roles').append(
+        '<li>' +
+        '<div class="awsc-menu-item-block">' +
+          '<a href="#" class="awsc-role-submit awsc-role-display-name" name="displayName">' +
+            'Please go to the AWS Console first</a>' +
+        '</div>' +
+        '</li>'
+      );
+    }
+  });
 });
