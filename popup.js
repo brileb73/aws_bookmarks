@@ -119,30 +119,36 @@ function addExit() {
 }
 
 $(document).ready(function() {
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    if (tabs[0].url.includes("console.aws.amazon.com")) {
-      // Roles are stored as [] of {} under the key "roles" in order to use
-      // JSON.stringify and JSON.parse
-      var accounts_array = JSON.parse(localStorage.accounts_array || "{}");
-      if (accounts_array.roles) {
+  // Roles are stored as [] of {} under the key "roles" in order to use
+  // JSON.stringify and JSON.parse
+  var accounts_array = JSON.parse(localStorage.accounts_array || "{}");
+  if (accounts_array.roles) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      if (tabs[0].url.includes("console.aws.amazon.com")) {
         addExit();
         listRoles(accounts_array.roles);
         $("a").each(function() {
           this.addEventListener('click', openLink);
         });
       } else {
-        // TODO: Add <tr> to inform user of no roles
-        console.log("No roles available");
+        $('#awsc-username-menu-recent-roles').append(
+          '<li>' +
+          '<div class="awsc-menu-item-block">' +
+            '<a href="#" class="awsc-role-submit awsc-role-display-name" name="displayName">' +
+              'Please go to the AWS Console first</a>' +
+          '</div>' +
+          '</li>'
+        );
       }
-    } else {
-      $('#awsc-username-menu-recent-roles').append(
-        '<li>' +
-        '<div class="awsc-menu-item-block">' +
-          '<a href="#" class="awsc-role-submit awsc-role-display-name" name="displayName">' +
-            'Please go to the AWS Console first</a>' +
-        '</div>' +
-        '</li>'
-      );
-    }
-  });
+    });
+  } else {
+    $('#awsc-username-menu-recent-roles').append(
+      '<li>' +
+      '<div class="awsc-menu-item-block">' +
+        '<a href="options/options.html" target="_blank" class="awsc-role-submit awsc-role-display-name">' +
+          'Set up roles</a>' +
+      '</div>' +
+      '</li>'
+    );
+  }
 });
