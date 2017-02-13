@@ -1,8 +1,24 @@
+ul {
+    list-style-type: none;
+    margin-left: -45px;
+}
+
+li {
+    list-style-type: none;
+    display: list-item;
+    padding: 10px;
+}
+
+label {
+    background-color: #333333;
+}
+
 #awsc-switch-role-support {
     color: #444;
+    display: block;
     font-size: 13px;
     line-height: 15px;
-    font-family: Helvetica Neue, Roboto, Arial, Droid Sans, sans-serif;
+    font-family: Helvetica Neue, Arial, sans-serif;
     white-space: nowrap;
 }
 
@@ -11,23 +27,8 @@
     white-space: nowrap;
 }
 
-#awsc-switch-role-support ul {
-    list-style-type: none;
-}
-
 #awsc-recent-roles-label {
-    color: #999;
-}
-
-li {
-    padding: 10px 0px;
-    list-style-type: none;
-    display: list-item;
-    margin-left: -40px;
-}
-
-label {
-    background-color: #333333;
+    color: #555;
 }
 
 .awsc-role-color {
@@ -47,4 +48,8 @@ label {
     cursor: pointer;
     vertical-align: top;
     white-space: nowrap;
+}
+
+.awsc-role-goto {
+    padding: 10px 0;
 }

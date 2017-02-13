@@ -4,15 +4,15 @@
   "description": "Make your own AWS role history (and have > 5 switch roles)",
   "version": "0.0",
   "icons": {
-    "32": "imgs/icon32.png",
-    "64": "imgs/icon64.png",
-    "128": "imgs/icon128.png"
+    "32": "assets/imgs/icon32.png",
+    "64": "assets/imgs/icon64.png",
+    "128": "assets/imgs/icon128.png"
   },
   "browser_action": {
-    "default_icon": "imgs/icon32.png",
+    "default_icon": "assets/imgs/icon32.png",
     "default_popup": "popup.html"
   },
-  "options_page": "options/options.html",
+  "options_page": "options.html",
   "permissions": [
     "storage",
     "tabs",

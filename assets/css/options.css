@@ -1,0 +1,219 @@
+body {
+    background: #333;
+}
+
+
+/* Roles Table */
+h1 {
+    color: #fff;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    color: #333;
+    font-family: Helvetica Neue, Roboto, Arial, Droid Sans, sans-serif;
+    font-size: 17px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    border: 1px solid transparent;
+    min-width: 125px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+th {
+    background: #DFDFDF;
+}
+
+td {
+    background: #FAFAFA;
+}
+
+tr:nth-child(even) td {
+    background: #F1F1F1;
+}
+
+tr:nth-child(odd) td {
+    background: #FEFEFE;
+}
+
+
+/* Form input */
+input {
+    font: 16px / 18px sans-serif;
+}
+
+form {
+    max-width: 690px;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+.switchrole-form-container label, .switchrole-form-container h1 {
+    color: #fff;
+}
+
+.textinput, .switchrole-textinput {
+    padding-top: 20px;
+    clear: both;
+}
+
+.textinput label, .switchrole-textinput label {
+    display: inline-block;
+    clear: left;
+    text-align: right;
+    width: 230px;
+    padding-right: 10px;
+    line-height: 27px;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.textinput input, .switchrole-textinput {
+    width: 250px;
+}
+
+form div {
+    padding: 0;
+}
+
+.css3button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: -moz-linear-gradient(top,#38d 0,#16b);
+    background: -webkit-gradient(linear,left top,left bottom,from(#38d),to(#16b));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #16b;
+    -moz-box-shadow: 0 0 0 rgba(000,000,000,0), inset 0 0 2px rgba(255,255,255,1);
+    -webkit-box-shadow: 0 0 0 rgba(000,000,000,0), inset 0 0 2px rgba(255,255,255,1);
+    box-shadow: 0 0 0 rgba(000,000,000,0), inset 0 0 2px rgba(255,255,255,1);
+    text-shadow: 0 1px 0 rgba(025,084,167,1), 0 0 0 rgba(255,255,255,0);
+    background-color: #16B;
+}
+
+.switchrole-form-container {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.switchrole-textinput {
+    float: left;
+    height: 30px;
+    width: 450px;
+}
+
+.switchrole-textinput input {
+    width: 190px;
+}
+
+.colorinput {
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 40px;
+    height: 30px;
+    margin-top: 10px;
+    clear: both;
+}
+
+.colorinput label {
+    display: inline-block;
+    clear: left;
+    text-align: right;
+    line-height: 27px;
+    font-weight: bold;
+    font-size: 1.25em;
+    width: 230px;
+    padding: 5px 10px 5px 0;
+}
+
+.color-picker {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-width: 350px;
+    position: relative;
+    margin-left: 5px;
+}
+
+.color-picker label {
+    color: #000;
+    padding: 4px 4px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.color-picker input[type="radio"] {
+    visibility: hidden;
+    margin: -9px;
+}
+
+.color-picker input[type="radio"]:checked + label {
+    border: 3px solid #444;
+}
+
+.color-picker input[type="radio"]:not(:checked) + label {
+    border: 3px solid transparent;
+}
+
+.color-picker input[type="radio"]:checked + label[for="none"] {
+    border: 3px solid #bbb;
+}
+
+.color-picker input[type="radio"]:not(:checked) + label[for="none"] {
+    border: 3px solid transparent;
+}
+
+.color-picker .color-box {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    margin: 2px 1px 2px 1px;
+    font-weight: normal;
+    padding: 3px;
+}
+
+.switchrole-buttoninput {
+    border: 0;
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.switchrole-buttoninput label {
+    display: inline-block;
+    clear: left;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 27px;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.buttoninput label[class="required"], .switchrole-buttoninput label[class="required"] {
+    display: inline;
+    margin: 10em;
+}

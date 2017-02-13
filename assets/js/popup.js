@@ -89,7 +89,7 @@ function listRoles(accounts_array) {
     var code = '(' + bookmarklet + ')("' + roleName + '","' + account + '","' + displayName + '","' + color + '")';
     var href = 'javascript:' + escape(code.replace(/\s+/g, ' '));
     $('#awsc-username-menu-recent-roles').append(
-      '<li>' +
+      '<li class="awsc-role-li">' +
       '<div class="awsc-menu-item-block">' +
         '<label for="awsc-recent-role-switch-' + i + '" class="awsc-role-color" ' +
           'style="background-color: #' + color + ';">&nbsp;&nbsp;&nbsp;&nbsp;</label>' +
@@ -132,7 +132,7 @@ $(document).ready(function() {
         });
       } else {
         $('#awsc-username-menu-recent-roles').append(
-          '<li>' +
+          '<li class="awsc-role-goto">' +
           '<div class="awsc-menu-item-block">' +
             '<a href="#" class="awsc-role-submit awsc-role-display-name" name="displayName">' +
               'Please go to the AWS Console first</a>' +
@@ -143,9 +143,9 @@ $(document).ready(function() {
     });
   } else {
     $('#awsc-username-menu-recent-roles').append(
-      '<li>' +
+      '<li class="awsc-role-goto">' +
       '<div class="awsc-menu-item-block">' +
-        '<a href="options/options.html" target="_blank" class="awsc-role-submit awsc-role-display-name">' +
+        '<a href="options.html" target="_blank" class="awsc-role-submit awsc-role-display-name">' +
           'Set up roles</a>' +
       '</div>' +
       '</li>'

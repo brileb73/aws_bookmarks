@@ -40,10 +40,14 @@ function removeRole(roleNumber) {
  */
 function listRoles(accounts_array) {
   for (var i = 0; i < accounts_array.length; i++) {
+    var color = accounts_array[i].color;
+    if (color === '') {
+      color = '000';
+    }
     $('#all_roles_tbody').append(
       '<tr>' +
         '<td>' +
-          '<label style="background-color: #' + accounts_array[i].color + ';">&nbsp;&nbsp;&nbsp;&nbsp;</label>' +
+          '<label style="background-color: #' + color + ';">&nbsp;&nbsp;&nbsp;&nbsp;</label>' +
         '</td>' +
         '<td>' + accounts_array[i].displayName + '</td>' +
         '<td>' + accounts_array[i].account + '</td>' +
